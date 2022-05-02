@@ -193,7 +193,7 @@ class ItemRepositoryTest {
         String itemSellStatus = "SELL";
 
         booleanBuilder.and(item.itemDetail.like("%" + itemDetail + "%"));
-        booleanBuilder.and(item.itemSellStatus.eq(ItemSellStatus.SELL));
+        booleanBuilder.and(item.price.gt(price));
 
         if (StringUtils.equals(itemSellStatus, ItemSellStatus.SELL)) {
             booleanBuilder.and(item.itemSellStatus.eq(ItemSellStatus.SELL));
